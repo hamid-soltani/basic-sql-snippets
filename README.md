@@ -1,25 +1,28 @@
 Basic SQL Snippets for Sublime Text
 
-## Install (Windows Only)
+## Download
 
-### Using git (cmd)
+* [download](https://github.com/hamid-soltani/basic-sql-snippets) `*.zip` file
 
+![download zip file](img/download-zip-file.png)
+
+* or you can use [git](https://git-scm.com/)
 ```bash
-cd "%APPDATA%\Sublime Text 3\Packages\User"
-git clone "" SQL
+cd %HOMEPATH%\Downloads
+git clone https://github.com/hamid-soltani/basic-sql-snippets.git
 ```
 
-### Manual
+## Install (Windows Only)
 
-1. [download](https://github.com/hamid-soltani/basic-sql-snippets) `*.zip` file
-![download zip file](img/download-zip-file.png)
-2. And then you have two choises `Graphical` or `Using cmd`
+you have two choises `Graphical` or `Using cmd`
 
 #### Graphical
 
 1. `Ctrl+Shift+p`
 2. Type: "browse" and then press `Enter` - windows explorer will open
-  ![type browser in Sublime](img/browser.png)
+
+![type browser in Sublime](img/browser.png)
+
 3. Enter `User/` folder
 4. Create new folder `SQL/`
 5. Move all `*.sublime-snippet` into the `SQL/` folder
@@ -28,22 +31,20 @@ git clone "" SQL
 #### Using cmd
 
 1. Go to
-	```bash
-	cd "%APPDATA%\Sublime Text 3\Packages\User"
-	```
+```bash
+cd "%APPDATA%\Sublime Text 3\Packages\User"
+```
 
 2. Create new folder `SQL/`
-	```bash
-	mkdir SQL
-	```
+```bash
+mkdir SQL
+```
 
 3. Move or copy all `*.sublime-snippet` into `SQL\` folder (Just created)
-	```bash
-	# Let's assume that your (*.sublime-snippet) files are into Downloads/SQL folder
-	move "%HOMEPATH%\Downloads\SQL\*.sublime-snippet" SQL\
-	# Or
-	copy "%HOMEPATH%\Downloads\SQL\*.sublime-snippet" SQL\
-	```
+```bash
+# Let's assume that your (*.sublime-snippet) files are into Downloads/SQL folder
+move "%HOMEPATH%\Downloads\basic-sql-snippets\SQL\*.sublime-snippet" SQL\
+```
 
 ## Usage
 1. Create new file into `Sublime Text`
