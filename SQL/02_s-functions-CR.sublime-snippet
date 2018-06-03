@@ -1,0 +1,55 @@
+<snippet>
+    <content><![CDATA[
+# Null
+    COALESCE(col, val_if_null) -- SQL Server, PostgreSQL, MySQL
+    NVL(col, val_if_null) -- Oracle
+    
+    --  SELECT nom, prenom, salaire, COALESCE(commission, 0) AS commission FROM employes;
+    --  SELECT societe, tel, COALESCE(fax, 'Pas de fax') AS fax FROM clients;
+
+# Agrégation
+    AVG(col)    COUNT(col)    MAX(col)    MIN(col)    SUM(col)
+
+# Strings
+    LEN(col)
+    LOWER(col)    UPPER(col)
+    SUBSTRING(col,start_position,len)  -- à partir du 1 (ex. SUBSTRING('Hamid', 1, 3) --> 'Ham')
+    LTRIM(col)    RTRIM(col)  -- supprime les espaces non significatifs.
+    RIGHT(col,n)    LEFT(col,n)
+    REPLACE(col,old,new)  -- remplacer dans "col" toutes les occurences de "old" par "new".
+
+# CAST
+    CAST({col|<const>} AS type)
+    --  Convertir une valeur dans le type spécifié.
+    --  Exemples :
+    --  SELECT 'Mr. ' + nom + ' gagne ' + salaire AS resultat FROM employes; ERROR
+    --  SELECT 'Mr. ' + nom + ' gagne ' + CAST(salaire AS CHAR) AS resultat FROM employes; OK, NO Problem
+
+    CONVERT(type_données, exp [,style])
+    -- Conversion de l'expression dans le type spécifié.
+    -- (style peut être utilisé dans les conversions date ou heure).
+
+# Dates
+    GETDATE() -- date et heure système.
+        SYSDATE() -- ORACLE, MySQL.
+    DATEPART(YEAR, date_naissance) -- Extract YEAR, MONTH or DAYOFYEAR
+    DATEDIFF(YEAR, date_naissance, GETDATE()) AS age -- différence selon le format entre les deux dates.
+    DATEADD(YEAR, 10, date_naissance) AS age_dans_10ans
+    DAY(expd), MONTH(expd), YEAR(expd)
+
+# MATH
+    SQRT(expn),    POWER(expn, n),    SQUARE(expn),    ABS(expn)
+    SIGN(expn) 1 si expn "+", -1 si expn "-", O si expn=0.
+
+    -- trigonométriques
+    PI(),    SIN(expn),    TAN(expn),    COS(expn),    COT(expn)
+
+    -- logarithmiques
+    EXP(expn),    LOG(expn)
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>s-functions-CR</tabTrigger>
+    <description>| Useful functions</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.sql</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+CONSTRAINT fk_${1:col} FOREIGN KEY (${1:col}) REFERENCES ${2:table_where_pk}(${1:col})
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-constraint-fk</tabTrigger>
+	<description>| CONSTRAINT .. FOREIGN KEY (..) REFERENCES tab(..)</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

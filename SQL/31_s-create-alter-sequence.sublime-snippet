@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+${1:CREATE}${2:|ALTER} SEQUENCE ${3:seq_name}
+START WITH ${4:1}
+INCREMENT BY ${5:1}
+-- MINVALUE 1 | NO MINVALUE
+-- MAXVALUE 10000 | NO MAXVALUE
+-- CYCLE | NO CYCLE
+CACHE ${6:3} -- NO CACHE
+;${7:
+/*
+On peut les utilisé soit "directement lors de la création de la table"
+soit dans "les procédures stocké"
+
+SELECT NEXT VALUE FOR ${3:seq_name};
+*/}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-create-alter-sequence</tabTrigger>
+	<description>| CREATE SEQUENCE ...</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

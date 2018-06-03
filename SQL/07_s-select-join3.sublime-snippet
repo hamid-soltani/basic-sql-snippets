@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+SELECT ${1:a.col1, b.col3}
+FROM ${2:table1} AS a ${3:LEFT|RIGHT|FULL OUTER} JOIN ${4:table2} AS b
+ON (a.${5:col1}=b.${5:col1}) ${6:LEFT|RIGHT|FULL OUTER} JOIN ${7:table3} AS c
+ON (b.${8:col3}=c.${8:col3})
+ORDER BY ${9:col ASC|DESC}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-select-join3</tabTrigger>
+	<description>| SELECT JOIN 3 tables</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

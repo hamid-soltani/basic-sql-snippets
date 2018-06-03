@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+ALTER TABLE ${1:table_name} ADD ${2:s-constraint-* | s-col*}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-alter-table-add</tabTrigger>
+	<description>| ALTER TABLE .. ADD ..</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

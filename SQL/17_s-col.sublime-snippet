@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+${1:col} ${2:TYPE} ${3:${4:NOT }NULL}${5: PRIMARY KEY}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-col</tabTrigger>
+	<description>| col</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

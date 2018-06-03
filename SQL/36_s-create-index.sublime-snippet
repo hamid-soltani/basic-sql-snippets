@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+CREATE ${1:[UNIQUE]} INDEX IDX_${2:index_name}
+ON ${3:table_name}(${4:col1 [ASC/DESC], col2})
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-create-index</tabTrigger>
+	<description>| CREATE INDEX .. ON ..</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

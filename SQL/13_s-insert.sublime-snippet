@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+INSERT INTO ${1:table} (${2:[col1, col2]}) VALUES
+(${3:val1, val2})${4:,
+(val1, val2)}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-insert</tabTrigger>
+	<description>| INSERT INTO</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

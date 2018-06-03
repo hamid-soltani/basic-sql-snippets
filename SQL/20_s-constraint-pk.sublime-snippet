@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+CONSTRAINT pk_${1:code_conducteur} PRIMARY KEY(${1:code_conducteur})
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-constraint-pk</tabTrigger>
+	<description>| CONSTRAINT .. PRIMARY KEY(..)</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

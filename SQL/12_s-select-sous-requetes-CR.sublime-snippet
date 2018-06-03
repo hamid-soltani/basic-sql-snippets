@@ -1,0 +1,37 @@
+<snippet>
+	<content><![CDATA[
+Les sous-requêtes : monolignes
+	* imbriquer une SELECT dans une autre ou dans une INSERT, UPDATE ou DELETE.
+	* les opérateurs =, < >, !=, < =, >, > = (car valeur unique)
+
+	Exemple:
+		SELECT *
+		FROM employes
+		WHERE salaire > (SELECT AVG(salaire) FROM employes)
+		ORDER BY salaire;
+
+Les sous-requêtes : multilignes
+	* c'est la même chose sauf
+	* l'opérateur [NOT] IN (car plusieurs valeurs)
+
+	Exemple:
+	/*  ? les employes qui n'ont pas traités de commandes  */
+		SELECT *
+		FROM employes
+		WHERE no_employe NOT IN (SELECT no_employe FROM commandes);
+
+Les sous-requêtes : dans la clause FROM
+	* c'est comme une table
+
+	Exemple:
+		SELECT a.code_client, a.societe, pays, no_commande, date_commande
+		FROM (SELECT * FROM clients WHERE pays='FR') AS a JOIN commandes AS b
+		ON (a.code_client=b.code_client)
+		ORDER BY a.societe;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-select-sous-requetes-CR</tabTrigger>
+	<description>| SELECT ... SELECT</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

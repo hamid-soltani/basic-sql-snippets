@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+ALTER TABLE ${1:table_name} DROP ${2:COLUMN |} ${3:CONSTRAINT} ${4:col|constraint_name}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-alter-table-drop-column-constraint</tabTrigger>
+	<description>| ALTER TABLE .. DROP COLUMN ..</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

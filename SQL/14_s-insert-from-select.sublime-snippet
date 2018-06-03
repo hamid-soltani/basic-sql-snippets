@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+${1:/*
+SELECT * INTO clients_FR FROM clients;
+-- result: "clients_FR" === "clients"
+
+DELETE FROM clients_FR;
+-- vider "clients_FR"
+*/
+}INSERT INTO ${2:clients_FR} -- No [AS] On SQL Server
+${3:SELECT * FROM clients WHERE pays='FR';
+-- insert from SELECT}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-insert-from-select</tabTrigger>
+	<description>| INSERT INTO .. AS (select)</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

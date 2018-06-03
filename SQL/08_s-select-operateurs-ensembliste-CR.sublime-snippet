@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+Les opérateurs ensemblistes:
+	(select1) UNION [ALL] (select2)
+	(select1) INTERSECT [ALL] (select2)
+	(select1) EXCEPT [ALL] (select2) 
+		-- EXCEPT(SQL Server, PostgreSQL, MySQL)
+		-- MINUS(Oracle, MySQL)
+
+Les contraintes
+	* (select1) & (select2) doivent avoir le même nombre de champs.
+	* Les champs doivent êtres de types compatibles.
+	* Exclusion des champs de type << LONG >>, << BLOB >>, << CLOB >> et << BFILE >>.
+	* Elimination automatiques des doublons (DISTINCT implicite).
+	* Les noms des colonnes et alias sont ceux du premier ordre << SELECT >>.
+	* La largeur de chaque champ est donnée par la plus grande de tous ordres << SELECT >> confondus.
+	* Si une clause << OROER BY >> est utilisée, il faut spécifiée le numéro du champ et non son nom.
+
+Exemples:
+	SELECT societe, ville, pays, 'CLIENTS' as table_source FROM clients
+	UNION ALL
+	SELECT societe, ville, pays, 'FOURNISSEURS' as table_source FROM fournisseurs
+	OROER BY 3 DESC; -- No names of columns onley their associated numbers
+
+	(SELECT ville, pays FROM clients) INTERSECT (SELECT ville, pays FROM fournisseurs)
+	ORDER BY 1;
+
+	(SELECT ville FROM clients) EXCEPT (SELECT ville FROM fournisseurs);
+
+	(SELECT pays FROM clients) EXCEPT (SELECT pays FROM fournisseurs)
+	ORDER BY 1;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-select-operateurs-ensembliste-CR</tabTrigger>
+	<description>| UNION, EXCEPT, INTERSECT</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

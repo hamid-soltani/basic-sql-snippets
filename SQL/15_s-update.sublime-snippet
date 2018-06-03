@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+UPDATE ${1:table}
+SET ${2:col1 = const_or_Uniq_select_val, col2 = val2}
+WHERE ${3:condition -- if (there is no WHERE) it updates "all the records"}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-update</tabTrigger>
+	<description>| UPDATE</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

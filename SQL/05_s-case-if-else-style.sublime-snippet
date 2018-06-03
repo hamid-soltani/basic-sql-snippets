@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+CASE
+WHEN ${1:unites_stock < 5} THEN ${2:'Alerte stock'}
+WHEN ${3:unites_stock BETWEEN 5 AND 100} THEN ${4:'Stock OK'}
+WHEN ${5:unites_stock > 100} THEN ${6:'Surstock'}
+END AS ${7:'Etat stock'}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>s-case-if-else-style</tabTrigger>
+    <description>| CASE IF ELSE ...</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.sql</scope>
+</snippet>

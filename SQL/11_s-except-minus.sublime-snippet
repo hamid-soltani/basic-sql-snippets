@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+${1:(select1)}
+EXCEPT ${2:[ALL]} -- ALL it didn't work on SQL Server
+${3:(select2)}${4:
+	-- EXCEPT (SQL Server, PostgreSQL, MySQL)
+	-- MINUS  (Oracle, MySQL)}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-except-minus</tabTrigger>
+	<description>| EXCEPT or MINUS</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

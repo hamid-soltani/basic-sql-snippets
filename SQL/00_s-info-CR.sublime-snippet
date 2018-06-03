@@ -1,0 +1,135 @@
+<snippet>
+	<content><![CDATA[
+# SQL (Structured Query Language):
+  * permet d'interagir avec les SGBDR
+  * Créé en 1974 par IBM et normalisé depuis 1986 (ANSI et ISO)
+
+# Les objets d'une BDD relationnelle
+  * Tables
+  * Indexes
+  * Vues
+  * Synonymes
+  * Séquences
+  * Fonctions
+  * Procédures
+  * Triggers
+
+# La notion d'intégrité des données
+  - Assurée par des contraintes sur les colonnes
+    * NULL ou NOT NULL
+    * Clés primaires
+    * Contrainte UNIQUE
+    * Clés étrangères
+    * Contraintes de contrôle
+    * Taille et le type de données
+
+# Les principaux types de langages
+  * DML (Langage de manipulation de données)
+    * INSERT, UPDATE et DELETE
+    * DIL (langage d'interrogation de données)
+      * SELECT
+  * DDL (Langage de définition de données)
+    * CREATE, ALTER, TRUNCATE, DROP et RENAME
+    * DCL (langage de contrôle de données)
+      * GRANT et REVOKE
+
+# Les limites du langage SQL
+  - Non procédural
+    * PL/SQL (Oracle)
+    * T-SQL (SQL Server)
+    * PlpgSQL (PostgreSQL)
+  - Portabilité limité
+    * Fonctions spécifiques à chaque SGBDR
+    * Typage différent d'un SGBDR à un autre
+
+# Les types de jointures
+  * Jointure d'égalité (équijointure)
+    * JOIN ON
+  * Jointure EXTERNE
+    * LEFT|RIGHT|FULL OUTER JOIN
+  * Autojointure
+    * JOIN ON
+      Nécessite des alias
+
+# ATTENTION: Les jointures
+  * Le produit cartésien (pages 211-218) 
+  * Les Autojointures (pages 254-261)  
+
+# Les types de sous-requêtes
+  * monolignes
+  * multilignes
+  * dans une clause FROM
+
+# Les types de données
+  Caractères
+    * VARCHAR(n)     longueur variable (n<16383)
+    * CHAR(n)        longueur fixe (n<16383)
+    * NCHAR(n)       valeur alpha de longueur fixe
+    * NVARCHAR(n)    valeur alpha de longueur maximale fixée sur le jeu de caractère du pays
+
+  Numériques
+    * NUMERIC(n,[d])
+    * INTEGER (ou INT)     32 bits (-2E31 - 2E31-1)
+    * SMALLINT             16 bits (-32768 - 32757)
+    * FLOAT                réel à virgule flottante à échelle et précision obligatoire
+    * REAL                 réel à virgule flottante de faible précision
+    * DOUBLE PRECISION     réel à virgule flottante de grande précision
+    * BIT                  chaîne de bit de longueur fixe
+    * BITVARYING           chaîne de bit de longueur maximale
+
+  Date & Heures
+    * DATE        date du calendier grégorien (yyyy-mm-dd)
+    * TIME        12:54:24.85
+    * TIMESTAMP   date & Heure
+
+# Qu'est-ce qu'une contrainte ?
+  * C'est une clause permettant de contraindre la modification de tables
+  * Permet d'assurer la cohérence des données dans la base
+  * Spécifiées dès la création de la table ou après (ALTER TABLE)
+    CREATE TABLE nom_table (nom_champ CONTRAINTE [, ... ])
+    ALTER TABLE ADD CONSTRAINT nom - contrainte TYPE CONTRAINTE
+
+# Les contraintes
+  * NOT NULL
+  * PRIMARY KEY
+  * UNIQUE
+  * REFERENCES
+  * DEFAULT
+  * CHECK
+  * Possibilité de nommer une contrainte via CONSTRAINT
+
+# Qu'est-ce qu'une vue ?
+  * Un objet logique auquel est rattaché une requête (SELECT)
+  * A chaque utilisation de la vue la requête associée est exécutée
+  * Aucun stockage physique des données de la vue
+
+  Les avantages:
+    * complexité de la requête non visible pour l'utilisateur final
+    * La description de la vue est sauvegardé dans la BDD
+    * Une restriction d'accès à la table pour l'utilisateur
+    * Un regroupement d'informations au sein d'une entité
+
+# Les séquences
+  * Permettent de générer des séries de numéros séquentiels unique
+  * Indépendante des tables
+
+# Qu'est-ce qu'un index ?
+  * Objet physique appartenant à une BDD.
+  * Un index est crée d'une manière explicite (CREATE INDEX) ou lors de la définition d'un champ comme PRIMARY KEY.
+  * Un index peut-être positionné sur une ou plusieurs colonnes.
+  * Permet un accès plus rapide aux données lors des opérations de SELECT, INSERT, UPDATE, DELETE.
+  * Réduit le temps d'accès à la localisation d'une ligne.
+
+  Quand utiliser un index ?
+    * Sur des tables volumineuses
+    * Sur des colonnes utilisées dans la clause WHERE
+    ATTENTION:
+    Trop d'index c'est pas bon
+    Toujours vérifier qu'un index est bien utilisé
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-info-CR</tabTrigger>
+	<description>| Informations</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+SELECT ${1:[DISTINCT] *, col1 AS alias1, ...} ${2:INTO new_table -- INTO (si on veut créer & remplir une nouvelle table)}
+FROM ${3:table1, table2}
+WHERE ${4:condition}
+ORDER BY ${5:col1 [ASC|DESC], col2}${6:
+
+/* Les opérateurs
+	=, <> ou !=, >, <, >=, <=
+	[NOT] IN ('FR', 'EN', 'AR')
+	[NOT] BETWEEN 1 AND 100
+	[NOT] LIKE 'D%'
+		// (% === * in RegEx) - (_ === . in RegEx) /!\ #####
+	IS [NOT] NULL
+	AND, OR
+
+Exemples:
+	SELECT DISTINCT ville FROM clients;
+	SELECT societe AS "Mes clients", adresse, ville FROM clients;  */}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-select</tabTrigger>
+	<description>| SELECT</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>

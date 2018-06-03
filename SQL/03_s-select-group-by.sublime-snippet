@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[
+SELECT ${1:col1, F(col2) [AS] alias1}
+FROM ${2:table1, table2}
+GROUP BY ${3:col1}
+HAVING ${4:condition}
+ORDER BY ${5:F(col2) [ASC|DESC], col2}${6:
+/*
+	SELECT fonction, AVG(salaire) AS Moy_salaire
+	FROM employes
+	GROUP BY fonction;
+*/}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>s-select-group-by</tabTrigger>
+    <description>| SELECT ... GROUP BY</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.sql</scope>
+</snippet>

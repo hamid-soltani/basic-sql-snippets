@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+CREATE TABLE test(
+	num NUMERIC(10),
+	nom VARCHAR(50)
+)
+
+DECLERE @cpt INT
+
+SELECT @cpt=1
+WHILE (@cpt<=100000)
+BEGIN
+INSERT INTO test VALUES(@cpt, 'Test index Ligne N° ' + CAST(@cpt AS CHAR))
+SELECT @cpt=@cpt+1
+END
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>s-t-sql-insert-100000-lignes</tabTrigger>
+	<description>| T-SQL insert 100000 lignes</description>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+</snippet>
