@@ -42,7 +42,6 @@ mkdir SQL
 
 3. Move or copy all `*.sublime-snippet` into `SQL\` folder (Just created)
 ```bash
-# Let's assume that your (*.sublime-snippet) files are into Downloads/SQL folder
 move "%HOMEPATH%\Downloads\basic-sql-snippets\SQL\*.sublime-snippet" SQL\
 ```
 
